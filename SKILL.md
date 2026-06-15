@@ -1,12 +1,12 @@
 ---
-name: kgsyh
-description: 酷狗收一下候选 skill。用于设计评审、方案收敛、商业化页面、概念稿、活动页、交互稿等内部过稿场景。触发词：kgsyh、收一下这版、更容易过、过稿、方案收敛、概念稿收口、商业化页评审。
+name: woodstuck
+description: 酷狗收一下候选 skill。用于设计评审、方案收敛、商业化页面、概念稿、活动页、交互稿等内部过稿场景。触发词：woodstuck、收一下这版、更容易过、过稿、方案收敛、概念稿收口、商业化页评审。
 description_zh: 调用既有协作沉淀，按上下文推进过稿
 description_en: Use existing collaboration context to converge a design or product proposal toward signoff
 version: 1.0.0
 ---
 
-# kgsyh
+# woodstuck
 
 过稿通关 skill。
 
@@ -106,7 +106,7 @@ Do not promise perfection. The operational target is: more stable, more memorabl
 
 ### 0.7 Hard differentiation bar
 
-`kgsyh` must feel meaningfully different from a generic design chat answer.
+`woodstuck` must feel meaningfully different from a generic design chat answer.
 
 If the output still sounds like generic critique, the skill has failed even if the wording is polite.
 
@@ -122,11 +122,27 @@ Minimum differentiation rules:
 
 Self-check before responding:
 
-- would this answer still be almost the same without `kgsyh`?
+- would this answer still be almost the same without `woodstuck`?
 - did I say exactly what to keep, what to cut, and what to收?
 - did I help the user make a decision, or only describe the page?
 
 If the answer fails any of the above, tighten it before sending.
+
+### 0.8 Detail-completeness bar
+
+`woodstuck` must not pass a draft only at the big-direction level.
+
+If the main direction is right but key branches, states, or next-step interactions are missing, the review is incomplete.
+
+Minimum completeness checks:
+
+- `人群分支`：different user states must be checked, not just the default happy path
+- `状态分支`：new user / non-member / current member / expired member / member without relevant entitlement / member with relevant entitlement
+- `下一步交互`：after click, after claim, after fail, after close, after return, what happens next
+- `边界情况`：empty state, already claimed, insufficient rights, duplicate entry, interruption, back path
+- `承接一致性`：the trigger copy, landing copy, CTA, and next-step logic must describe the same thing
+
+If any of these are materially unclear, do not call the draft signoff-ready.
 
 ### 1. Route to the right reference
 
@@ -158,6 +174,8 @@ Route the active task into one primary mode first:
 - `点位策略`：user is mainly asking where to place a membership/commercialization/entry point
 - `汇报收口`：user needs a cleaner board narrative, proposal framing, or review script
 - `改稿执行`：user wants direct redraw, redline, or img2 iteration
+- `商业外扩`：user wants the review to go beyond the current screen and judge monetization value, adjacent opportunities, and functional extension
+- `细节审计`：user wants a completeness review across branches, states, and step-by-step interaction consequences
 
 Mode rules:
 
@@ -166,6 +184,8 @@ Mode rules:
 - `点位策略` should focus on `场景角色 / 轻引导 vs 主转化 / 为什么这里成立`
 - `汇报收口` should focus on `这版在讲什么 / 为什么成立 / 为什么更容易过`
 - `改稿执行` should focus on `本轮只改一个主矛盾`, then iterate
+- `商业外扩` should focus on `这个交互本身值不值得做 / 能不能承接更多商业目标 / 能往哪些相邻功能扩 / 哪些扩法会破坏当前体验`
+- `细节审计` should focus on `漏了哪些人群 / 漏了哪些状态 / 下一步怎么走 / 有没有跳转断层 / 口径是否前后打架`
 
 If multiple modes are present, choose one主模式 and suppress the rest unless they block the judgment.
 
@@ -193,6 +213,16 @@ When the task is implementation-heavy, iteration-heavy, or likely to be handed a
 
 Do not dump the whole chain to the user every time. Use it internally to avoid early overconfident answers and to keep revisions stable across rounds.
 
+When the user asks to look `更多` or `更深`, extend the spec with two more fields:
+
+- `value`: beyond this page itself, what business value or user-value engine the interaction could create
+- `expansion`: what adjacent feature, retention loop, sharing hook, or commercialization path can grow from this interaction
+
+When the user asks for stronger completeness or when the task includes interaction review, also extend the spec with:
+
+- `segments`: which user groups or entitlement states must be checked separately
+- `flow`: what the next-step path is after every key action
+
 ### 3. Apply the context to the active task
 
 Use the imported context to improve the current work:
@@ -205,6 +235,10 @@ Use the imported context to improve the current work:
   - prefer `顺场景`, `耐看`, and `低风险落地路径` over pure novelty
 - For product logic:
   preserve already-agreed entry points, reporting language, and closure expectations.
+  When possible, look one layer beyond the current screen and ask:
+  - is this only a UI move, or can it become a reusable product mechanism?
+  - can this interaction support retention, sharing, gifting, recommendation, device linkage, paid upgrade, or membership perception?
+  - if expanded, what nearby feature should it connect to first?
 - For implementation:
   prefer existing templates, shared methods, and current project structures over blank-slate invention.
   If the task has repeated review churn, rewrite the historical signals into a compact execution spec before changing code or structure.
@@ -241,6 +275,40 @@ For visual design tasks:
   - `拼接卡`
   and explain how to move it toward the right category
 
+For interaction and signoff detail review:
+
+- do not stop at `入口成立`
+- always ask what happens for at least these branches when relevant:
+  - non-member
+  - current member without the needed coupon/right
+  - current member with the needed coupon/right
+  - already completed / already claimed / no longer eligible
+- audit the forward path, not just the entry:
+  - click entry
+  - landing page
+  - CTA action
+  - success / fail / close
+  - return path
+- if the page sells one promise but the next step delivers another, call it out as `承接断层`
+- if the proposal only works for one default path, call it `方向对，细节没收完`
+
+For broader business-value review:
+
+- do not stop at `好不好看` or `顺不顺`
+- judge whether the interaction can become:
+  - a reusable growth mechanic
+  - a repeatable commercialization module
+  - a sharing/gifting/social trigger
+  - a membership perception amplifier
+  - a bridge into adjacent functions
+- if the current interaction only solves a single-page problem, say so directly
+- if there is a stronger adjacent route, propose it even when it sits just outside the current page
+- always separate:
+  - `当前页面成立度`
+  - `商业价值上限`
+  - `可扩展方向`
+  - `扩展风险`
+
 For Kugou internal signoff-convergence tasks:
 
 - Read [references/kugou-signoff-lens.md](references/kugou-signoff-lens.md) when the user explicitly wants a design to be easier to pass internal review.
@@ -267,6 +335,8 @@ For Kugou internal signoff-convergence tasks:
   - `保留什么`
   - `先别动什么`
   - `本轮只改哪一个主矛盾`
+  - `这件事还能往哪扩，才更有商业价值`
+  - `还漏了哪些人群和下一步交互`
 
 ### 3.5 Img2 iteration protocol
 
@@ -362,6 +432,8 @@ For high-frequency review turns, these compact output shapes are preferred:
 - `一句判断 + P0 + 怎么收`
 - `保留 / 打回 / 替代收法`
 - `这轮先不动什么 + 只动什么`
+- `当前成立度 / 商业价值 / 外扩方向 / 风险`
+- `方向成立度 / 细节缺口 / 分支补齐 / 下一步承接`
 
 ## References
 

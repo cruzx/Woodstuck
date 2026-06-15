@@ -78,6 +78,7 @@ Before doing substantial work:
 - read [learning/EVOLUTION_RULES.md](learning/EVOLUTION_RULES.md)
 - read [learning/ONLINE_LEARNING_PROTOCOL.md](learning/ONLINE_LEARNING_PROTOCOL.md)
 - read [learning/SCORECARD.md](learning/SCORECARD.md)
+- read [learning/REVIEW_FRAMEWORK.md](learning/REVIEW_FRAMEWORK.md)
 - read [learning/CREATIVE_ENGINE.md](learning/CREATIVE_ENGINE.md)
 - read [learning/ITERATION_PROTOCOL.md](learning/ITERATION_PROTOCOL.md)
 - if the task seems related to a recent repeated pattern, inspect the latest entries in [learning/SESSION_LOG.md](learning/SESSION_LOG.md)
@@ -275,6 +276,13 @@ For trend-learning or startup-strategy tasks, also extend the spec with:
 - `signals`: what fresh external signals are worth taking seriously right now
 - `bets`: which 1-3 directions are worth actually betting on, instead of only discussing
 
+When the task touches music content launch, membership packaging, AI creation, discovery, player entry, or commercialization design, also run the four-frame external judgment from [learning/REVIEW_FRAMEWORK.md](learning/REVIEW_FRAMEWORK.md):
+
+- `module`: should this become a reusable multi-touchpoint module, not a one-off banner
+- `expression`: can the user express intent with lower burden, instead of entering a heavier feature
+- `layering`: should the excitement live in the control layer or the content/product layer
+- `chain`: is the value only at the first action, or across create / edit / share / distribute / pay
+
 ### 3. Apply the context to the active task
 
 Use the imported context to improve the current work:
@@ -365,6 +373,10 @@ For broader business-value review:
   - `商业价值上限`
   - `可扩展方向`
   - `扩展风险`
+- when relevant, also state:
+  - `它更像一次性点位，还是可复用模块`
+  - `它是在降低表达门槛，还是只增加了一个功能入口`
+  - `价值停在首点，还是能延长到分享、复用、支付`
 
 For trend-learning tasks:
 

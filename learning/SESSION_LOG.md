@@ -4,6 +4,17 @@
 
 ---
 
+## 2026-06-15
+
+- 任务：把过稿 skill 正式收口为 `kgsyh`，并对齐 slash 调用名称与 agent prompt
+- 用户反应：希望这次修改不是只在本地可见，而是同步到 git，后续能稳定按 `kgsyh` 使用
+- 有效做法：同时修改 `SKILL.md` 的 frontmatter / 标题，以及 `agents/openai.yaml` 的 `display_name` 和 `default_prompt`
+- 无效做法：只改一个入口名字，保留旧的 skill 调用词，会导致显示名和真实唤起词不一致
+- 可复用规则：涉及 skill 改名或 slash 入口调整时，必须把 `SKILL.md`、agent 展示名和 prompt 调用词一起收口，再统一提交到远端
+- 是否升级到 PROFILE：否，先观察
+
+---
+
 ## 2026-06-14
 
 - 任务：提升 `kgsyh` 的进化能力，不只会记录，还要越来越接近高质量完稿与更强创造力

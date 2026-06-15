@@ -104,6 +104,30 @@ When the user asks for a version that should be better, more complete, more perf
 
 Do not promise perfection. The operational target is: more stable, more memorable, less generic, and less likely to be sent back.
 
+### 0.7 Hard differentiation bar
+
+`kgsyh` must feel meaningfully different from a generic design chat answer.
+
+If the output still sounds like generic critique, the skill has failed even if the wording is polite.
+
+Minimum differentiation rules:
+
+- first give a direct verdict, not soft preamble
+- identify the single biggest gap before listing many observations
+- keep `P0` to `1-2` items unless the draft is clearly broken everywhere
+- include at least one `保留`, one `打回`, or one `替代收法` when reviewing a draft
+- avoid empty taste words such as `高级`, `精致`, `好看`, `有氛围` unless they are tied to a concrete visual or business consequence
+- if the user says `交互过了`, stop discussing interaction and switch fully into visual收稿 mode
+- if the user says `就是视觉`, judge `整体性`、`商品感`、`主次层级`、`兴奋度控制`, not product logic detours
+
+Self-check before responding:
+
+- would this answer still be almost the same without `kgsyh`?
+- did I say exactly what to keep, what to cut, and what to收?
+- did I help the user make a decision, or only describe the page?
+
+If the answer fails any of the above, tighten it before sending.
+
 ### 1. Route to the right reference
 
 Choose the smallest relevant imported context instead of loading everything:
@@ -122,6 +146,28 @@ Choose the smallest relevant imported context instead of loading everything:
 If the task spans multiple contexts, read only the 2-3 matching notes and synthesize them.
 
 For a compact routing summary, read [references/routing.md](references/routing.md).
+
+### 1.5 Task-mode router
+
+Do not answer every request with the same review shape.
+
+Route the active task into one primary mode first:
+
+- `视觉收稿`：user is mainly asking whether the page looks成立、耐看、像能上线
+- `交互收稿`：user is mainly asking whether the flow/entry/动作 is顺
+- `点位策略`：user is mainly asking where to place a membership/commercialization/entry point
+- `汇报收口`：user needs a cleaner board narrative, proposal framing, or review script
+- `改稿执行`：user wants direct redraw, redline, or img2 iteration
+
+Mode rules:
+
+- `视觉收稿` should focus on `整体性 / 主次 / 商品感 / 气氛强弱 / 材质与信息关系`
+- `交互收稿` should focus on `路径 / 阻力 / 承接 / 打断感 / 可上线风险`
+- `点位策略` should focus on `场景角色 / 轻引导 vs 主转化 / 为什么这里成立`
+- `汇报收口` should focus on `这版在讲什么 / 为什么成立 / 为什么更容易过`
+- `改稿执行` should focus on `本轮只改一个主矛盾`, then iterate
+
+If multiple modes are present, choose one主模式 and suppress the rest unless they block the judgment.
 
 ### 2. Extract the durable signal, not just the literal chat lines
 
@@ -177,6 +223,23 @@ For visual design tasks:
 - when the user asks for `优化`, treat the uploaded draft as the quality baseline; do not make the output rougher, cheaper, or more generic than the source
 - preserve the original page aspect ratio and component proportions; never squeeze the page narrower or distort the screen shell just to fit a board or redraw
 - if the user provides style references, first extract `可借鉴信号` and `禁止误用风险`, then propose edits; do not jump straight from reference mood to direct imitation
+- when the user says `交互已经过了` or clearly only wants visual review, stop discussing logic and switch to these four checks:
+  - `是不是一个整体`
+  - `是不是更像商品/套餐，而不是海报/活动图`
+  - `主视觉和价格动作谁在抢`
+  - `气氛是不是过了，还是刚好`
+- when a card or hero block feels split, default first move is to fix `整体容器关系`, not to add more decoration
+- when the user asks for `再热闹一点`, increase only one level and prefer `局部碎点 / 柔光 / 局部材质` over adding more modules
+- when the user says `有点过了`, do a `去兴奋化` pass before trying a new concept:
+  - reduce particles
+  - reduce glow
+  - reduce decorative gift language
+  - preserve structure
+- when reviewing commercialization cards, explicitly judge whether it looks like:
+  - `商品卡`
+  - `活动海报`
+  - `拼接卡`
+  and explain how to move it toward the right category
 
 For Kugou internal signoff-convergence tasks:
 
@@ -200,6 +263,29 @@ For Kugou internal signoff-convergence tasks:
   - how to收成更容易过的版本
   - if needed, a lower-risk implementation fallback
 - Use direct, practical review language rather than decorative critique.
+- For stronger contrast, when possible also include:
+  - `保留什么`
+  - `先别动什么`
+  - `本轮只改哪一个主矛盾`
+
+### 3.5 Img2 iteration protocol
+
+When the user wants direct redraw or image iteration:
+
+- do not change three variables at once in one round unless the source is fundamentally wrong
+- first identify the main contradiction, such as:
+  - `整体性不够`
+  - `商品感太弱`
+  - `气氛过头`
+  - `层级不清`
+- each img2 round should primarily solve one contradiction
+- after each round, name whether the next move is:
+  - `加一点`
+  - `收一点`
+  - `不动结构只压气氛`
+  - `不动气氛只修层级`
+
+This prevents the common failure mode where each redraw looks different but not clearly better.
 
 For Kugou main app player-page growth/commercialization tasks:
 
@@ -270,6 +356,12 @@ When responding after using this skill, prefer one of these shapes:
 - `Context + implementation rule`: what the historical chat implies the code or design should preserve.
 - `Context + risk`: when the task conflicts with earlier agreed principles or depends on unstable historical details.
 - `Context + compact spec`: for repeated review loops, implementation handoff, or tasks that need a stable `what / how / constraints / verify` frame.
+
+For high-frequency review turns, these compact output shapes are preferred:
+
+- `一句判断 + P0 + 怎么收`
+- `保留 / 打回 / 替代收法`
+- `这轮先不动什么 + 只动什么`
 
 ## References
 

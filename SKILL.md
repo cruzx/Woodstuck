@@ -97,6 +97,13 @@ After substantial work:
 
 Scheduled maintenance exists separately and should keep the same principle: record only durable signals, not noisy fragments.
 
+Learning-source rule:
+
+- for trend or competitor learning, use official sources as the mechanism truth layer
+- when visual or page-form inspiration is needed, use screenshot pools such as `美叶` as the interface layer
+- never treat screenshot pools as the only evidence for `new feature / new mode / launch timing`
+- when using screenshot pools, classify what you saw into reusable gameplay or product patterns instead of only discussing style
+
 ### 1. Route to the right reference
 
 Choose the smallest relevant imported context instead of loading everything:
@@ -149,6 +156,7 @@ Route the task into one primary mode first.
   - read [playbooks/interaction-review.md](playbooks/interaction-review.md)
 - `趋势吸收`
   - read [learning/ONLINE_LEARNING_PROTOCOL.md](learning/ONLINE_LEARNING_PROTOCOL.md) and then browse fresh sources if needed
+  - for music/product inspiration, default to combine `official updates + app-store/real screenshots + 美叶 screenshot pools` before distilling signals
 - `创业判断`
   - read [playbooks/startup-judgment.md](playbooks/startup-judgment.md)
 

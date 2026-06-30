@@ -68,7 +68,7 @@ Then add only the smallest matching extra context:
 - optional `1` reference note under [references/](references/)
 - optional `1` topic note under [research/](research/)
 - optional recent entries in [learning/SESSION_LOG.md](learning/SESSION_LOG.md) only when the task clearly matches a repeated recent pattern
-- optional recent entries in [learning/TREND_LOG.md](learning/TREND_LOG.md) only when the task depends on current external signals
+- optional [learning/TREND_LOG.md](learning/TREND_LOG.md) index and current month under `learning/trends/` only when the task depends on current external signals
 
 Avoid default broad-loading:
 

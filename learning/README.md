@@ -18,7 +18,7 @@
   - 输出是 `SESSION_LOG -> PROFILE`
 - `联网蒸馏管线`
   - 输入是 `外部最新变化 -> 机制核验 -> 页面层补充 -> 热度层观察`
-  - 输出是 `TREND_LOG -> PROFILE`
+  - 输出是 `trends/YYYY-MM -> TREND_LOG 索引 -> PROFILE`
 
 ## 结构
 
@@ -29,7 +29,9 @@
 - `ONLINE_LEARNING_PROTOCOL.md`
   - 什么时候需要联网，以及联网后该怎么蒸馏
 - `TREND_LOG.md`
-  - 联网学习后的高价值趋势记录
+  - 联网学习后的趋势入口索引和写入规则
+- `trends/YYYY-MM.md`
+  - 按月份保存完整高价值趋势记录
 - `SESSION_LOG.md`
   - 每次重要协作后的简短沉淀记录
 - `SESSION_TEMPLATE.md`
@@ -47,7 +49,7 @@
 2. 只有在要做沉淀/进化动作时，再读 `EVOLUTION_RULES.md`
 3. 如果任务偏当前趋势或方向判断，再读 `ONLINE_LEARNING_PROTOCOL.md`
 4. 只有任务明显命中近期重复模式时，才查看 `SESSION_LOG.md` 最近几条
-5. 如果需要最新外部输入，先联网，再把高价值信号写入 `TREND_LOG.md`
+5. 如果需要最新外部输入，先联网，再把高价值信号写入当月 `trends/YYYY-MM.md`
 6. 完成任务后，把这次对话的有效信号写入 `SESSION_LOG.md`
 7. 如果同类信号重复出现 3 次以上，再升级写入 `PROFILE.md`
 
@@ -77,7 +79,7 @@
 
 默认升级路径：
 
-`外部信号 -> TREND_LOG -> 跨任务验证 -> PROFILE`
+`外部信号 -> trends/YYYY-MM -> TREND_LOG 索引 -> 跨任务验证 -> PROFILE`
 
 ### 3. PROFILE 是两条路径的汇合层
 
@@ -101,7 +103,7 @@
 4. `Canonical`
    - 成为 `PROFILE.md` 里的长期规则
 
-`SESSION_LOG` 和 `TREND_LOG` 主要承接前 2-3 层，`PROFILE` 只收第 4 层。
+`SESSION_LOG` 和 `trends/YYYY-MM` 主要承接前 2-3 层，`TREND_LOG` 负责索引，`PROFILE` 只收第 4 层。
 
 如果需要更稳定地追加记录，可优先使用：
 

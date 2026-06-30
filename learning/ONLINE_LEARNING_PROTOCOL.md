@@ -44,7 +44,8 @@
 4. `distill`
    - 压成 `signal / why / use / avoid`
 5. `store`
-   - 先写 `TREND_LOG.md`，必要时配套归档到 `assets/竞品/`
+   - 先写当月趋势文件 `learning/trends/YYYY-MM.md`，必要时配套归档到 `assets/竞品/`
+   - `TREND_LOG.md` 只维护索引、格式和读取规则
 6. `promote`
    - 只有跨任务复用稳定，才升级进 `PROFILE.md`
 
@@ -93,7 +94,7 @@
 建议：
 
 - `E1` 多数只当灵感
-- `E2-E3` 适合写入 `TREND_LOG`
+- `E2-E3` 适合写入当月趋势文件
 - `E4` 才有资格考虑升到 `PROFILE`
 
 ## 来源优先级
@@ -191,7 +192,7 @@
 ## 沉淀规则
 
 - 一次任务里学到的外部信号，如果只对当前任务有用，不必长期记录
-- 如果这个信号未来大概率还会反复用到，就写入 `TREND_LOG.md`
+- 如果这个信号未来大概率还会反复用到，就写入当月趋势文件 `learning/trends/YYYY-MM.md`
 - 如果这个信号已经变成跨任务稳定判断，再升级到 `PROFILE.md`
 
 升级前最好再过一遍：

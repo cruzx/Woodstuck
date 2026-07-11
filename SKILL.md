@@ -274,6 +274,8 @@ CTR / placement rules:
 
 - for main-app player-page placement prediction, read [benchmarks/kugou-main-player-android-2026-05.md](benchmarks/kugou-main-player-android-2026-05.md)
 - for main-app home-page placement prediction, read [benchmarks/kugou-main-home-android-click-baseline.md](benchmarks/kugou-main-home-android-click-baseline.md)
+- for Kugou PC home/player/lyrics placement judgment, read [benchmarks/kugou-pc-home-player-click-map-2026-07-10.md](benchmarks/kugou-pc-home-player-click-map-2026-07-10.md)
+- treat the PC screenshot percentages as same-surface directional evidence until the metric definition, period, and client version are confirmed; do not directly compare them with Android baselines
 - do not predict click value from visual intuition alone when baseline data exists
 
 ### 4. Keep the boundary honest

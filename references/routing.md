@@ -61,6 +61,7 @@ Read the commercialization note when the task mentions:
 - category-specific commercialization design
 - Kugou main-app player page entries, star cards, commercial cards, floating rewards, lyrics/cover overlays, or player-page placement decisions
 - Kugou main-app home page first-screen entries, Kingkong modules, information-flow cards, recommendation cards, mini-player prompts, bottom-tab ideas, or home-page commercial/growth placements
+- Kugou PC home/player/lyrics entries, desktop recommendation modules, bottom playback-bar ideas, or PC-side commercial/growth placements
 
 Durable signals:
 
@@ -70,6 +71,7 @@ Durable signals:
 - strong solutions are expected to become reusable strategy assets, not just one-off pages
 - for main-app player placement decisions, read `benchmarks/kugou-main-player-android-2026-05.md` and ground CTR predictions in the 2026 May Android player-page click benchmarks
 - for main-app home-page placement decisions, read `benchmarks/kugou-main-home-android-click-baseline.md` and ground CTR/click-penetration predictions in first-screen and feed-card benchmarks
+- for Kugou PC home/player placement decisions, read `benchmarks/kugou-pc-home-player-click-map-2026-07-10.md`; keep it as a same-surface directional comparison until metric formula, period, and client version are confirmed
 - when the task explicitly mentions `商业化设计组`, day-to-day group review, template/brand-book buildup, repeated popup/card normalization, or a need to borrow the merged judgment style of multiple internal reviewers, also read `references/business-design-group-cluster-lens.md`
 
 ### 4. Small-Group Report / Signoff Context

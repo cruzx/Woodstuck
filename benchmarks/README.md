@@ -24,3 +24,5 @@
 - `会员中心改版一期数据复盘-压缩版.md`
 - `kugou-main-home-android-click-baseline.md`
 - `kugou-main-player-android-2026-05.md`
+- `kugou-pc-home-player-click-map-2026-07-10.md`
+  - 用户确认的酷狗 PC 首页与播放页点位数据快照；指标口径未补齐前仅用于同页面相邻点位比较
